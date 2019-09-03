@@ -7,13 +7,13 @@ import java.io.*;
 public class EID2 {
 
     public static void main(String[] args) throws java.lang.Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(br.readLine().trim());
+        Scanner input = new Scanner(System.in);
+        int t = input.nextInt();
         while (t-- > 0) {
             int n = 6;
             int arr[] = new int[n];
             for (int i = 0; i < 6; i++) {
-                arr[i] = Integer.parseInt(br.readLine().trim());
+                arr[i] = input.nextInt();
             }
 
             System.out.println(eidi(arr));
@@ -32,33 +32,16 @@ public class EID2 {
                 arr[i + 3] = temp;
             }
         }
-        for (i = 0; i < 6; i++) {
-            System.out.println(arr[i]);
-        }
+        /*Logic to sort */
+//        for (i = 0; i < 6; i++) {
+//            System.out.println(arr[i]);
+//        }
         /* logic*/
 
-        for (i = 2; i > 0; i--) {
-            if (arr[i] > arr[i - 1]) {
-                if (arr[i + 3] > arr[i - 1 + 3]) {
-                    continue;
-                } else {
-                    flag = 0;
-                    break;
-                }
-            }
-            if (arr[i] == arr[i - 1]) {
-                if (arr[i + 3] == arr[i - 1 + 3]) {
-                    continue;
-                } else {
-                    flag = 0;
-                    break;
-                }
-
-            }
-        }
-
-
-        if (flag == 1) return "FAIR";
+        /* Logic to check eidi is fair or not
+         */
+        if ((arr[5] > arr[4]) && (arr[4] > arr[3]))
+            return "FAIR";
         else return "NOT FAIR";
     }
 }
