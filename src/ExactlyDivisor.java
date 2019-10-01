@@ -7,49 +7,69 @@ import java.util.Scanner;
 
 public class ExactlyDivisor {
     public static void main(String[] args) {
-        System.out.println("Please enter the value of n");
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        exactly3Divisors(n);
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int N;
+            N = sc.nextInt();
+            long start = System.nanoTime();
+            System.out.println(exactly3Divisors(N));
+            long end = System.nanoTime();
+            System.out.println("Time taken to run in ms " + ((end - start) / 1000));
+        }
     }
 
-    static List<Integer> list = new ArrayList<Integer>();
 
     public static int exactly3Divisors(int N) {
         int count = 0;
-        printPrime(N);
+        int temp;
+        int temp1 = 2 + (int) Math.sqrt(N);
+
+        List<Integer> list = new ArrayList<Integer>();
+        list = printPrime(temp1);
+
         for (int i = 0; i < list.size(); i++) {
-            int temp = list.get(i);
+            temp = list.get(i);
             temp = temp * temp;
             if (temp <= N) {
+                System.out.println(temp);
                 count++;
             }
         }
-        System.out.println(count);
         return count;
     }
 
-    public static void printPrime(int N) {
-        int i, sizeOfList;
+    public static List<Integer> printPrime(int N) {
+        List<Integer> list = new ArrayList<Integer>();
+        int i, sizeOfList, previousListSize;
         for (i = 0; i <= N; i++) {
             list.add(i, i);
         }
         sizeOfList = list.size();
-
-        for (i = 2; i <= sizeOfList; i++) {
+        previousListSize = sizeOfList;
+        System.out.println(list);
+        for (i = 2; i < sizeOfList; i++) {
 
             for (int j = i + 1; j < sizeOfList; j++) {
                 int temp = list.get(j);
-                if (temp % i == 0) {
+                if (temp % list.get(i) == 0) {
                     list.remove((Integer) temp);
-                    sizeOfList = list.size();
+                    j = j - 1;
+                    sizeOfList = sizeOfList - 1;
                 }
 
             }
+            if (sizeOfList == previousListSize) {
+                break;
+            } else {
+                previousListSize = sizeOfList;
+            }
             sizeOfList = list.size();
         }
+
         list.remove(0);
         list.remove(0);
-        System.out.println(list);
+        return list;
     }
 }
