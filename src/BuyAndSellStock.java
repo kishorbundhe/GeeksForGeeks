@@ -24,6 +24,10 @@
          int i = 0, profit = 0, size = arr.length;
          List<Integer> minlist = new ArrayList<Integer>();
          List<Integer> maxlist = new ArrayList<Integer>();
+         if (size < 2) {
+             System.out.println(" Atleast Stocks Prices should be given for two days ");
+             return;
+         }
          // Condition for the Start point
          if (arr[0] < arr[1]) {
              minlist.add(arr[0]);
