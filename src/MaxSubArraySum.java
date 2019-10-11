@@ -15,8 +15,11 @@ public class MaxSubArraySum {
             arr[i] = sc.nextInt();
             i++;
         }
-        maxSubArray(arr, k);
-        minSubArray(arr, k);
+      /*  maxSubArray(arr, k);
+        minSubArray(arr, k);*/
+        System.out.println("Enter the sum to find");
+        int sumToFind = sc.nextInt();
+        System.out.println("Is Sum Present " + givenSum(arr, sumToFind));
     }
 
     /*This function calculates the maximun sum of the subArray */
@@ -69,5 +72,38 @@ public class MaxSubArraySum {
         }
         System.out.println("The min sum =" + sum + " is from index [i,j]=[" + start + "," + end + "]");
 
+    }
+
+    /* This function returns whether there is subarray have a given sum */
+    public static boolean givenSum(int[] arr, int sum) {
+        int size, i = 0, temp = 0, start = 0, end = 0;
+        size = arr.length;
+        /* Handling  the case for 0*/
+        if (sum == 0) {
+            for (int j : arr) {
+                if (j == 0) {
+                    return true;
+                }
+            }
+            if (sum == 0) {
+                return false;
+            }
+        }
+        for (i = 0; i < size; i++) {
+            if (temp == sum) {
+                return true;
+            }
+            temp += arr[i];
+            end++;
+            if (temp > sum) {
+                while (temp > sum) {
+                    temp -= arr[start];
+                    start++;
+                }
+            }
+
+
+        }
+        return false;
     }
 }
