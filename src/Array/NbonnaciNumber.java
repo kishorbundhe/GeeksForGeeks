@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/* Print the first M N-bonnaci Number */
+/* Print the first M N-bonnaci Number  */
 public class NbonnaciNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
