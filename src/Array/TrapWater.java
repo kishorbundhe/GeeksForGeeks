@@ -1,8 +1,13 @@
+package Array;
+
 import java.util.Scanner;
 
 public class TrapWater {
     public static void main(String[] args) {
-        int t, i = 0, arr[], size;
+        int t;
+        int i = 0;
+        int[] arr;
+        int size;
         Scanner sc = new Scanner(System.in);
         t = sc.nextInt();
         while (t-- > 0) {
@@ -17,9 +22,9 @@ public class TrapWater {
         }
     }
 
-    public static int catchWater(int arr[], int size) {
-        int leftmax[] = new int[size];
-        int rightmax[] = new int[size];
+    public static int catchWater(int[] arr, int size) {
+        int[] leftmax = new int[size];
+        int[] rightmax = new int[size];
         int i = 0, max = 0, sum = 0, temp = 0;
         // Calculating the Right Max .
 

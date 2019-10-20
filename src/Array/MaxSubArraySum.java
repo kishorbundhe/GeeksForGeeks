@@ -1,3 +1,5 @@
+package Array;
+
 import java.util.Scanner;
 
 /* Find the subarray having length=k with max and min of the sum with */

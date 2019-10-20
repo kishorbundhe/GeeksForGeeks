@@ -1,4 +1,4 @@
- /* Given an array fo stocks on some days , you need to find buy &  sell schedule for maximum profit */
+package Array; /* Given an array fo stocks on some days , you need to find buy &  sell schedule for maximum profit */
 
  import java.util.ArrayList;
  import java.util.Iterator;
