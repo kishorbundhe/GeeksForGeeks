@@ -2,6 +2,10 @@ package Array;
 
 import java.util.Scanner;
 
+/* Given an array which represents blocks on surface ,
+ * what amount of water you can trap .
+ * Example : 3 0 1 2 5 output = 3
+ * */
 public class TrapWater {
     public static void main(String[] args) {
         int t;
