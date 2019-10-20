@@ -2,6 +2,7 @@ package Array;
 
 import java.util.Scanner;
 
+/* By Kishor Bundhe*/
 /* Find the subarray having length=k with max and min of the sum with */
 public class MaxSubArraySum {
     public static void main(String[] args) {
