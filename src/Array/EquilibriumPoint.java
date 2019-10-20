@@ -1,5 +1,5 @@
 package Array;
-
+/* By Kishor Bundhe*/
 import java.util.Scanner;
 
 import static Array.CreatePrefixArray.prefixArray;
