@@ -2,6 +2,8 @@ package Array;
 
 import java.util.Scanner;
 
+import static Array.CreatePrefixArray.prefixArray;
+
 /* Point where the Sum of the left side element and right side element have the same sum */
 public class EquilibriumPoint {
     public static void main(String[] args) {
@@ -20,16 +22,6 @@ public class EquilibriumPoint {
         equilibriumPoint(arr, point);
     }
 
-    /*Creating Prefix Array*/
-    public static int[] prefixArray(int[] array) {
-        int sum = 0;
-        int[] prefixArray = new int[array.length];
-        prefixArray[0] = array[0];
-        for (int i = 1; i < array.length; i++) {
-            prefixArray[i] = prefixArray[i - 1] + array[i];
-        }
-        return prefixArray;
-    }
 
     public static void equilibriumPoint(int[] array, int index) {
 

@@ -2,6 +2,8 @@ package Array;
 
 import java.util.*;
 
+import static Array.CreatePrefixArray.prefixArrayList;
+
 /* Given n ranges find the max element appearing in these ranges  Example l[]={1,2,5,15} and
 r[]={5,8,7,18} and 0<<l[i]&&r[i] <<1000 then output will be 5 as 5 appears in the range 1 to 5 and 2to8 and 5to7
 i.e is 3 times */
@@ -34,16 +36,7 @@ public class MaxAppearingElement {
         maxappearedElement(setsOfRanges);
     }
 
-    /*Creating Prefix Array*/
-    public static ArrayList createPrefixList(ArrayList<Integer> temp) {
 
-        ArrayList<Integer> prefixList = new ArrayList<Integer>(50);
-        prefixList.add(temp.get(0));
-        for (int i = 1; i < temp.size(); i++) {
-            prefixList.add(i, prefixList.get(i - 1) + temp.get(i));
-        }
-        return prefixList;
-    }
 
     public static void maxappearedElement(Set<Coordinate> temp) {
         int[] arr = new int[50];
@@ -57,7 +50,7 @@ public class MaxAppearingElement {
             list.set(i.endpoint + 1, list.get(i.endpoint + 1) - 1);
         }
         System.out.println("list Before" + list);
-        list = createPrefixList(list);
+        list = prefixArrayList(list);
         System.out.println("Prefix list" + list);
         int count = 0;
         List<Integer> maxlist = new ArrayList<Integer>();
