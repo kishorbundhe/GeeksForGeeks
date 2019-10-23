@@ -42,5 +42,6 @@ class ArrayMax {
         System.out.println("max =" + max + "max2=" + max2);
     }
 
+
 }
 
