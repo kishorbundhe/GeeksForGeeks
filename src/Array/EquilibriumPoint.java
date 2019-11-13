@@ -1,5 +1,6 @@
 package Array;
-/* By Kishor Bundhe*/
+/* Given an array A of N positive numbers. The task is to find the position where equilibrium first occurs in the array.
+ Equilibrium position in an array is a position such that the sum of elements before it is equal to the sum of elements after it.*/
 import java.util.Scanner;
 
 import static Array.CreatePrefixArray.prefixArray;
@@ -8,33 +9,60 @@ import static Array.CreatePrefixArray.prefixArray;
 public class EquilibriumPoint {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int i = 0;
-        System.out.println("Enter the size of the Array");
-        int size = sc.nextInt();
-        int[] arr = new int[size];
-        System.out.println("Enter the value for the array");
-        while (i < size) {
-            arr[i] = sc.nextInt();
-            i++;
-        }
-        System.out.println(" Enter the index to check Equilibrium Point ");
+        int i;
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            i = 0;
+            int size = sc.nextInt();
+            int[] arr = new int[size];
+            while (i < size) {
+                arr[i] = sc.nextInt();
+                i++;
+            }
+            firstEquillibriumPoint(arr);
+            /* System.out.println(" Enter the index to check Equilibrium Point ");
         int point = sc.nextInt();
-        equilibriumPoint(arr, point);
+        equilibriumPoint(arr, point);*/
+        }
     }
 
 
     public static void equilibriumPoint(int[] array, int index) {
-
+        int size = array.length;
         int[] temp = prefixArray(array);
-        if (index < array.length && index != 0 && index != array.length - 1) {
-            if (temp[index - 1] - (temp[array.length - 1] - temp[index]) == 0) {
+        if (index < size && index != 0 && index != size - 1) {
+            if (temp[index - 1] - (temp[size - 1] - temp[index]) == 0) {
                 System.out.println(" Yes it is Equilibrium Point ");
             } else {
                 System.out.println(" No, It is not a Equilibrium Point ");
             }
 
-        } else if (index == 0 && index == array.length - 1) {
+        } else if (index == 0 && index == size - 1) {
             System.out.println("End Points Cannot be the Equilibrium Point");
         }
     }
+
+    public static void firstEquillibriumPoint(int[] array) {
+        int i = 0, size;
+        size = array.length;
+        if (size == 1) {
+            System.out.print(1);
+        } else if (size == 2) {
+            System.out.print(-1);
+        } else {
+            int[] temp = prefixArray(array);
+            for (i = 1; i < size - 1; i++) {
+                if (temp[i - 1] - (temp[size - 1] - temp[i]) == 0) {
+                    break;
+                }
+            }
+            if (i < size - 1) {
+                System.out.print(i);
+            } else {
+                System.out.print(-1);
+            }
+        }
+
+    }
+
 }
