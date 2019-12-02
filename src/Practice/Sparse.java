@@ -1,3 +1,5 @@
+package Practice;
+
 import java.util.Scanner;
 
 /*Given a number N.  The task is to check whether it is sparse or not.

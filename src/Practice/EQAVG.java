@@ -1,4 +1,4 @@
-/* package codechef; // don't place package name! */
+package Practice;/* package codechef; // don't place package name! */
 
 import java.util.*;
 import java.lang.*;
@@ -34,7 +34,7 @@ class EQAVG {
             int n = input.nextInt();
             System.out.println("k");
             int k = input.nextInt();
-            int arr[] = new int[n];
+            int[] arr = new int[n];
             for (int i = 0; i < n; i++) {
                 arr[i] = input.nextInt();
             }
@@ -43,7 +43,7 @@ class EQAVG {
         }
     }
 
-    public static String eqavg(int arr[], int n, int k) {
+    public static String eqavg(int[] arr, int n, int k) {
         int sum = 0;
         for (int i = 0; i < n; i++) {
             sum += arr[i];

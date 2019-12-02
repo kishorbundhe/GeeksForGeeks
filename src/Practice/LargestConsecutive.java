@@ -1,3 +1,5 @@
+package Practice;
+
 import java.util.Scanner;
 
 import static java.lang.StrictMath.ceil;
@@ -9,7 +11,6 @@ public class LargestConsecutive {
         System.out.println("Please enter the value of n");
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
-        ;
         maxConsecutiveOnes(n);
     }
 

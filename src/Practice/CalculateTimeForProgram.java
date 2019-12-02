@@ -1,3 +1,5 @@
+package Practice;
+
 public class CalculateTimeForProgram {
     public long start_time;
     public long end_time;

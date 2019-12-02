@@ -1,4 +1,4 @@
-/* package codechef , EIDI gift problem*/
+package Practice;/* package codechef , EIDI gift problem*/
 
 import java.util.*;
 import java.lang.*;
@@ -11,7 +11,7 @@ public class EID2 {
         int t = input.nextInt();
         while (t-- > 0) {
             int n = 6;
-            int arr[] = new int[n];
+            int[] arr = new int[n];
             for (int i = 0; i < 6; i++) {
                 arr[i] = input.nextInt();
             }
@@ -20,7 +20,7 @@ public class EID2 {
         }
     }
 
-    public static String eidi(int arr[]) {
+    public static String eidi(int[] arr) {
         int flag = 1, i;
         for (i = 0; i < 3; i++) {
             if (arr[i] > arr[i + 1]) {

@@ -1,9 +1,11 @@
+package Practice;
+
 import java.lang.Math;
 
 public class Heap {
     static int l, r, heap_size, large, temp;
     static int[] input = {1, 5, 6, 2, 90, 45, 85};
-    static int heap[] = new int[input.length + 1];
+    static int[] heap = new int[input.length + 1];
 
     public static void main(String[] args) {
         heap[0] = 0;

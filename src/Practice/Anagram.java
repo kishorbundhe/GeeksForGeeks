@@ -1,14 +1,16 @@
+package Practice;
+
 import java.lang.reflect.Array;
 
 public class Anagram {
 
     public static void main(String[] args) {
-        boolean isanagram=Anagram("earth", "bateh");
+        boolean isanagram = Anagram("earth", "bateh");
         System.out.print(isanagram);
     }
 
     private static boolean Anagram(String one, String two) {
-        int abcz[] = new int[26];
+        int[] abcz = new int[26];
 
         one = one.toLowerCase();
         two = two.toLowerCase();
@@ -35,13 +37,8 @@ public class Anagram {
             sum += i;
 
         }
-        if (sum == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return sum == 0;
     }
-
 
 
 }

@@ -1,4 +1,4 @@
-/*Given N points on the cartesian plane.  We need to find the minimum number of steps required to traverse all points (from start to end) in the same order as given.  From a point, movement in all 8 directions are possible and every movement is counted as a step.
+package Practice;/*Given N points on the cartesian plane.  We need to find the minimum number of steps required to traverse all points (from start to end) in the same order as given.  From a point, movement in all 8 directions are possible and every movement is counted as a step.
 
 Input :
 The first line of input contains number of test cases T. For every test case, the first line contains the number of points N and the second line contains the sequence of points represented by 2*N numbers.
@@ -53,7 +53,7 @@ public class NoOfSteps {
         int i, j, count = 0;
         Scanner input = new Scanner(System.in);
         int nofpoints = input.nextInt();
-        int xy[][] = new int[nofpoints][2];
+        int[][] xy = new int[nofpoints][2];
         for (i = 0; i < nofpoints; i++) {
             for (j = 0; j < 2; j++) {
                 xy[i][j] = input.nextInt();
