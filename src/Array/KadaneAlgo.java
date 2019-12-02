@@ -28,7 +28,7 @@ public class KadaneAlgo {
         globalMax = arr[n - 1];
         int i = 0;
         while (i != (n - 1)) {
-            currentMax = Math.max(arr[i % n], currentMax + arr[i % n]);
+            currentMax = Math.max(arr[i], currentMax + arr[i]);
             globalMax = Math.max(currentMax, globalMax);
             i = (i + 1) % n;
         }
