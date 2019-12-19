@@ -17,8 +17,31 @@ public class Peakproblem {
             for (int i = 0; i < n; i++) {
                 arr[i] = Integer.parseInt(string[i]);
             }
-            findpeak(arr, n);
+            /*findpeak(arr, n);*/
+            int x = Integer.parseInt(br.readLine().trim());
+            floor(arr, n, x);
         }
+    }
+
+
+    private static void floor(int[] arr, int size, int x) {
+        /*Given a sorted array arr[] of size N without duplicates, and given a value x. Find the floor of x in given array.
+        Floor of x is defined as the largest element K in arr[] such that K is smaller than or equal to x.*/
+        int mid, high, low;
+        low = 0;
+        mid = 0;
+        high = size - 1;
+        while (low <= high) {
+            mid = low + (high - low) / 2;
+            if (arr[mid] <= x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        System.out.println(low - 1);
+
+
     }
 
     private static void findpeak(int[] arr, int size) {
@@ -51,4 +74,5 @@ public class Peakproblem {
         }
 
     }
-}
+    }
+
