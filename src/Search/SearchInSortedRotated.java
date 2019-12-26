@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import static PublicFunctions.PublicFunctions.binarysearch;
 
+
 /* Search an element in a sorted and rotated array
 * Input  : arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3};
          key = 3
@@ -23,10 +24,50 @@ public class SearchInSortedRotated {
             for (int i = 0; i < n; i++) {
                 arr[i] = Integer.parseInt(string[i]);
             }
-            System.out.println("Enter the element you want to find ");
-            int element = Integer.parseInt(br.readLine().trim());
-            searchElement(arr, n, element);
+            /*System.out.println("Enter the element you want to find ");
+            int element = Integer.parseInt(br.readLine().trim());*/
+            minNumber(arr, 0, n - 1);
+            /*searchElement(arr, n, element);*/
+            /*floorSqrt(40);*/
         }
+    }
+
+
+    public static void floorSqrt(long x) {
+        long start = 1, end = x, ans = 0, mid = 0;
+
+        while (start <= end) {
+            mid = (start + end) / 2;
+            if (mid * mid == x) {
+                System.out.println(mid);
+            } else if (mid * mid < x) {
+                start = mid + 1;
+                ans = mid;
+
+            } else {
+                end = mid - 1;
+            }
+
+        }
+        System.out.println(ans);
+    }
+
+    static long minNumber(int[] arr, int low, int high) {
+        int mid, pivotIndex = 0;
+        do {
+            mid = (low + high) / 2;
+            if (arr[mid] > arr[mid + 1]) {
+                pivotIndex = mid;
+                break;
+            } else if (arr[mid] > arr[0]) {
+                low = mid + 1;
+            } else if (arr[mid] < arr[0]) {
+                high = mid - 1;
+            }
+
+        } while (low <= high);
+        System.out.println(arr[pivotIndex + 1]);
+        return arr[pivotIndex + 1];
     }
 
     /* Using Binary search Algo we first find the pivot element*/
