@@ -28,8 +28,29 @@ public class RoofTop {
             for (int i = 0; i < n; i++) {
                 arr[i] = Integer.parseInt(string[i]);
             }
-            maxStep(arr, n);
+//            maxStep(arr, n);
+            countRepeat(arr, n);
         }
+    }
+
+    /* You are given heights of consecutive buildings. You can move from the roof of a building to the roof of next adjacent building.
+    You need to find the maximum number of consecutive steps you can put forward such that you gain an increase in altitude. */
+    private static void countRepeat(int[] arr, int size) {
+        int start, end, i, j, repeatedNo = 0, NoOfTimes;
+
+        start = arr[0];
+        end = arr[size - 1];
+        NoOfTimes = (start + size) - end;
+        for (i = 0, j = size - 1; i < j; i++, j--) {
+            if (arr[i + 1] == arr[i]) {
+                repeatedNo = arr[i];
+                break;
+            } else if (arr[j - 1] == arr[j]) {
+                repeatedNo = arr[j];
+                break;
+            }
+        }
+        System.out.print(repeatedNo + " " + NoOfTimes);
     }
 
     private static void maxStep(int[] arr, int size) {
