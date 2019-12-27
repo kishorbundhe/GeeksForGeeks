@@ -3,6 +3,8 @@ package Search;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Collections;
 /*You are given an array of N+2 integer elements. All elements of the array are in range 1 to N.
 And all elements occur once except two numbers which occur twice. Find the two repeating numbers.*/
 
@@ -21,8 +23,35 @@ public class TwoRepeatedElements {
             for (int i = 0; i < n; i++) {
                 arr[i] = Integer.parseInt(string[i]);
             }
-            twoRepeated(arr, n);
+            /* twoRepeated(arr, n)*/
+            int k = Integer.parseInt(br.readLine().trim());
+            countOccurence(arr, n, k);
         }
+    }
+
+    /*Given an array arr[] of size N and an element k. The task is to find all elements in array that appear more than n/k times.*/
+    private static void countOccurence(int[] arr, int n, int k) {
+        int element, m = n / k;
+        Arrays.sort(arr);
+        element = arr[0];
+        int finalCount = 0, count = 1;
+
+        for (int i = 1; i < n; i++) {
+            if (element == arr[i]) {
+                count++;
+            } else {
+                if (count > m) {
+                    finalCount++;
+                }
+                element = arr[i];
+                count = 1;
+            }
+        }
+        if (count > m) {
+            finalCount++;
+        }
+        System.out.println(finalCount);
+
     }
 
     private static void twoRepeated(int[] arr, int size) {
@@ -52,25 +81,5 @@ public class TwoRepeatedElements {
             System.out.print(store[1] + " " + store[0]);
         }
 
-//        for(i = 0; i < size; i++){
-////            if(store[0])
-//        }
-
-    }
-
-    public static int binarysearch(int[] arr, int low, int high, int x) {
-        int mid;
-
-        while (low <= high) {
-            mid = low + (high - low) / 2;
-            if (arr[mid] == x) {
-                return mid;
-            } else if (x > arr[mid]) {
-                low = mid + 1;
-            } else if (x < arr[mid]) {
-                high = mid - 1;
-            }
-        }
-        return -1;
     }
 }
