@@ -104,9 +104,7 @@ public class MaxSubArraySum {
                     start++;
                 }
             }
-
-
         }
-        return false;
+        return temp == sum;
     }
 }
