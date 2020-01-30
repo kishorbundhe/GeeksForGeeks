@@ -14,6 +14,7 @@ public class PublicFunctions {
         return a;
     }
 
+
     /*
      *  Binary search */
     public static int binarysearch(int[] arr, int low, int high, int x) {
