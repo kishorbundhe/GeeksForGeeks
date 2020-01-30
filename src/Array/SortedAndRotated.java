@@ -1,5 +1,7 @@
 package Array;
 
+import PublicFunctions.CalculateTimeForProgram;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,8 +22,12 @@ public class SortedAndRotated {
             for (int i = 0; i < n; i++) {
                 arr[i] = Integer.parseInt(inputline[i]);
             }
+            CalculateTimeForProgram calculateTimeForProgram = new CalculateTimeForProgram();
+            calculateTimeForProgram.startTime();
             boolean flag = checkSortedAndRotated(arr, n);
-            System.out.println(flag);
+            calculateTimeForProgram.endTime();
+
+            System.out.println(flag + " " + calculateTimeForProgram.timeInMilli());
         }
     }
 

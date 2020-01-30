@@ -15,6 +15,6 @@ public class CalculateTimeForProgram {
     }
 
     public long timeInMilli() {
-        return ((start_time - end_time) / 1000);
+        return ((end_time - start_time) / 1000);
     }
 }
