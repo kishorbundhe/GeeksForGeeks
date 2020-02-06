@@ -72,11 +72,11 @@ public class MinimumPlatforms {
         firstToDepart = departures.get(j).departure;
         for (; i < n; i++) {
             if (arrivals.get(i).arrival >= firstToDepart) {
-                System.out.println(arrivals.get(i).arrival + " ------- " + firstToDepart);
+
                 j++;
                 firstToDepart = departures.get(j).departure;
             } else {
-                System.out.println(arrivals.get(i).arrival + " first to departure " + firstToDepart);
+
                 count++;
 //                firstToDepart = Math.max(ar.get(i).departure, firstToDepart);
             }
