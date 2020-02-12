@@ -7,8 +7,8 @@ public class Tempstring {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] string1, string2;
-        string1 = sc.nextLine().split(",");
-        string2 = sc.nextLine().split(",");
+        string1 = sc.nextLine().split(" ");
+        string2 = sc.nextLine().split(" ");
         ArrayList<String> list1 = new ArrayList<String>();
         ArrayList<String> list2 = new ArrayList<String>();
         for (String i :
@@ -24,14 +24,15 @@ public class Tempstring {
                 list2.add(i);
             }
         }
+
         Collections.sort(list1);
         Collections.sort(list2);
         System.out.println(list1);
         System.out.println(list2);
         if (list1.equals(list2)) {
-            System.out.println("Equal");
+            System.out.println("Equal" + list1.size());
         } else {
-            System.out.println("Not equal");
+            System.out.println("Not equal" + list1.size());
         }
     }
 }

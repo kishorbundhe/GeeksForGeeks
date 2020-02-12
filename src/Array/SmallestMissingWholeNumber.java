@@ -3,6 +3,7 @@ package Array;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /*You are given an array arr[] of N integers including 0. The task is to find the smallest positive number missing from
 the array.
@@ -19,7 +20,7 @@ public class SmallestMissingWholeNumber {
                 arr[i] = Integer.parseInt(inputline[i]);
             }
             Missing obj = new Missing();
-            Missing.missingNumber(arr, n);
+            Missing.missingNumber1(arr, n);
 
         }
 
@@ -66,6 +67,27 @@ class Missing {
         }
         System.out.println(i + 1);
         return 0;
+    }
+
+    static void missingNumber1(int[] arr, int size) {
+        Arrays.sort(arr);
+        int missing = 0, repeating = 0, i = 0;
+        for (; i < size - 1; i++) {
+            if (arr[i] == arr[i + 1]) {
+                repeating = arr[i];
+            }
+            if (missing == 0 && arr[i] != i + 1) {
+                missing = i + 1;
+
+            }
+        }
+        if (missing == 0 && arr[i] != i + 1) {
+            missing = i + 1;
+        }
+        System.out.println("missing number=" + missing);
+        System.out.println("repeating number=" + repeating);
+
+
     }
 
 }
