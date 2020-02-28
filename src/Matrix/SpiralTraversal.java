@@ -35,14 +35,14 @@ public class SpiralTraversal {
                 System.out.print(matrix[i][right] + " ");
             }
             right--;
-            if (top < bottom) {
+            if (top <= bottom) {
                 for (j = right; j >= left; j--) {
                     System.out.print(matrix[bottom][j] + " ");
                 }
                 bottom--;
             }
 
-            if (left < right) {
+            if (left <= right) {
                 for (i = bottom; i >= top; i--) {
                     System.out.print(matrix[i][left] + " ");
                 }
