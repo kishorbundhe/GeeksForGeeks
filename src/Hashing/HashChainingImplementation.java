@@ -64,9 +64,9 @@ public class HashChainingImplementation {
         HashChaining hastable = new HashChaining();
         hastable.insert(12);
         hastable.insert(20);
-        hastable.insert(21);
+        hastable.insert("21");
         System.out.println(hastable.search(12));
-        hastable.delete(21);
+        hastable.delete("21");
         System.out.println(hastable.search(21));
     }
 }
