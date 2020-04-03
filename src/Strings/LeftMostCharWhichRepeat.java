@@ -11,6 +11,8 @@ public class LeftMostCharWhichRepeat {
         while (t-- > 0) {
             String string = sc.nextLine();
             System.out.println(firstRepeat(string, string.length()));
+            // Better Implememntation
+            System.out.println(firstRepeat(string, string.length()));
         }
     }
 
@@ -26,6 +28,23 @@ public class LeftMostCharWhichRepeat {
                 visitedArray[temp] = 1;//visited
             } else {
                 res = Math.min(res, i);
+            }
+        }
+        return string.charAt(res);
+    }
+
+    private static char firstRepeat1(String string, int length) {
+        int res = Integer.MAX_VALUE;
+        int temp;
+        int i;
+        int[] visitedArray = new int[256];
+        Arrays.fill(visitedArray, -1);
+        for (i = length - 1; i >= 0; i--) {
+            temp = string.charAt(i);
+            if (visitedArray[temp] == -1) {
+                visitedArray[temp] = 1;//visited
+            } else {
+                res = i;
             }
         }
         return string.charAt(res);
