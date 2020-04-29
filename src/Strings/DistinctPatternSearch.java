@@ -3,7 +3,9 @@ package Strings;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/*Given a string S and a pattern P (of distinct characters) consisting of lowercase characters.
+The task is to check if pattern P exists in the given string S or not.
+Note : Pattern has distinct characters. There might be repetitions in text.*/
 public class DistinctPatternSearch {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
