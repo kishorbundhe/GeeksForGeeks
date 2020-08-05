@@ -8,6 +8,4 @@ class Node {
         data = a;
         next = null;
     }
-
-}
 }
